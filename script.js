@@ -49,13 +49,14 @@ let todoList = {
 			}	
 		});
 	},
-	// store session locally
-	storeSession: function () {
-		// Put the object into storage
-		localStorage.setItem('todoList', JSON.stringify(todoList));
-
+	// check local storage
+	checkStorage: function () {
 		// Retrieve the object from storage
-		var retrievedObject = localStorage.getItem('todoList');
+		let retrievedObject = localStorage.getItem('todos');
+		if(retrievedObject !== null) {
+			this.todos = JSON.parse(retrievedObject);
+		}
+		view.displayTodos();
 	}
 };
 
@@ -128,9 +129,8 @@ let view = {
 
 			todosUl.appendChild(todoLi);
 		}, this);
-
-		// after displaying, store the current state
-		todoList.storeSession();
+		// Put the object into storage
+		localStorage.setItem('todos', JSON.stringify(todoList.todos));
 	},
 
 	// create a new delete button where this function is called
@@ -207,3 +207,4 @@ let view = {
 
 // run event listeners
 view.setUpEventListeners();
+todoList.checkStorage();
