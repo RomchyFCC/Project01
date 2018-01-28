@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>To Do List</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+		<link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+	</head>
+	<body>
+
+		<header>
+			<h1 class="header">Todo list</h1>
+		</header>
+
+		<div class="container">
+
+			<div class="input">
+				<button class="btn toggle fa fa-circle-o" id="toggleButton" onclick="handlers.completeAll()" ></button>
+				<input id="addTodo" type="text" placeholder="Insert text">
+				<button class="btn add fa fa-plus" onclick="handlers.addTodo(document.getElementById('addTodo').value)"></button>
+			</div>
+
+			<div class="items">
+				<ul></ul>
+			</div>
+
+			<div class="footer">
+				<p>Items Left:&nbsp;<span id="itemsLeft">0</span></p>
+				<button class="btn fa fa-eraser" onclick="todoList.removeAll()">Clear All</button>
+			</div>
+
+		</div><!-- Container End-->
+
+		<footer>
+
+			<p>Created by: <span class="author">Roman Struna</span></p>
+			<p>&copy; 2018 Romchy</p>
+
+			<ul>
+				<li><a href="https://www.linkedin.com/in/romanstruna/" class="fa fa-linkedin" target="_blank"></a></li>
+				<li><a href="https://github.com/RomchyFCC" class="fa fa-github" target="_blank"></a></li>
+			</ul>
+
+		</footer>
+
+		<script type="text/javascript" src="./script.js"></script>
+	</body>
+</html>
