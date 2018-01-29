@@ -42,10 +42,10 @@ let todoList = {
 			toggleButton = document.getElementById("toggleButton");
 			if (allTodos === completeTodos) {
 				element.complete = false;
-				toggleButton.className = "btn toggle fa fa-check-circle-o";
+				toggleButton.className = "btn toggle fa fa-check-square-o";
 			} else {
 				element.complete = true;
-				toggleButton.className = "btn toggle fa fa-circle-o";
+				toggleButton.className = "btn toggle fa fa-square-o";
 			}	
 		});
 	},
@@ -104,9 +104,9 @@ let view = {
 		todoList.todos.forEach(function(element) {
 			toggleButton = document.getElementById("toggleButton");
 			if (allTodos === completeTodos) {
-				toggleButton.className = "btn toggle fa fa-check-circle-o";
+				toggleButton.className = "btn toggle fa fa-check-square-o";
 			} else {
-				toggleButton.className = "btn toggle fa fa-circle-o";
+				toggleButton.className = "btn toggle fa fa-square-o";
 			}	
 		});
 
@@ -124,7 +124,7 @@ let view = {
 			todoLi.insertBefore(this.createCompleteButton(), todoLi.childNodes[0]);
 
 			if (todo.complete === true) {
-				todoLi.childNodes[0].className = "btn completeButton fa fa-check-circle-o";
+				todoLi.childNodes[0].className = "btn completeButton fa fa-check-square-o";
 			}
 
 			todosUl.appendChild(todoLi);
@@ -149,7 +149,7 @@ let view = {
 			if(event.target.className === "btn deleteButton fa fa-times") {
 				todoList.removeTodo(parseInt(event.target.parentNode.id));
 			}
-			if(event.target.className === "btn completeButton fa fa-circle-o" || event.target.className === "btn completeButton fa fa-check-circle-o") {
+			if(event.target.className === "btn completeButton fa fa-square-o" || event.target.className === "btn completeButton fa fa-check-square-o") {
 				todoList.completeTodo(parseInt(event.target.parentNode.id));
 			}
 		});
@@ -190,7 +190,7 @@ let view = {
 	// create a new complete button where this function is called
 	createCompleteButton: function() {
 		let completeButton = document.createElement("button");
-		completeButton.className = "btn completeButton fa fa-circle-o"
+		completeButton.className = "btn completeButton fa fa-square-o"
 		return completeButton;
 	},
 
