@@ -1,6 +1,6 @@
 let todoList = {
 	// create a blank array of todos
-	todos: [],
+	todos: [{todoText: "Button on the left completes me, double clicks change me :)", complete: false}],
 	// add a new todo with text of "todo"
 	addTodo: function(todo) {
 		this.todos.push({
@@ -57,12 +57,14 @@ let todoList = {
 			this.todos = JSON.parse(retrievedObject);
 		}
 		view.displayTodos();
-	}
+	},
+	utility: false
 };
 
 let handlers = {
 	// add a new todo to the list
 	addTodo: function(todoText) {
+		todoList.utility = true;
 		todoList.addTodo(todoText);
 		addTodo.value="";
 		addTodo.focus();
@@ -128,7 +130,19 @@ let view = {
 			}
 
 			todosUl.appendChild(todoLi);
+
 		}, this);
+
+		// everytime we add a new todo, animate the last li item with opacity
+		if(todoList.utility === true) {
+			listItem = document.querySelector("li:last-child");
+			listItem.classList.add("added-todo");
+			setTimeout(() => {
+				listItem.classList.remove("added-todo");
+			}, 200);
+			todoList.utility = false;
+		}
+
 		// Put the object into storage
 		localStorage.setItem('todos', JSON.stringify(todoList.todos));
 	},
@@ -147,7 +161,10 @@ let view = {
 		let todosUl = document.querySelector("ul");
 		todosUl.addEventListener("click", function(event) {
 			if(event.target.className === "btn deleteButton fa fa-times") {
-				todoList.removeTodo(parseInt(event.target.parentNode.id));
+				event.target.parentNode.className = "removal-of-todo";
+				setTimeout(() => {
+					todoList.removeTodo(parseInt(event.target.parentNode.id));
+				}, 200);
 			}
 			if(event.target.className === "btn completeButton fa fa-square-o" || event.target.className === "btn completeButton fa fa-check-square-o") {
 				todoList.completeTodo(parseInt(event.target.parentNode.id));

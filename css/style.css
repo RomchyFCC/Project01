@@ -31,8 +31,7 @@ input {
   background: #ccc;
   font-size: 20px;
   border: none;
-  color: #5a4e4d;
-  margin: 0 5px; }
+  color: #5a4e4d; }
 
 ul {
   padding: 0;
@@ -43,54 +42,79 @@ ul {
   grid-template-columns: 80px 1fr 80px;
   grid-auto-rows: minmax(25px, auto);
   align-items: center;
-  box-shadow: 0px 0px 100px 6px #5a4e4d; }
-  .container .input {
-    grid-column: 1/4;
-    grid-row: 1/2;
-    display: grid;
-    grid-template-columns: 60px 1fr 60px;
-    background: #5a4e4d;
-    border-radius: 5px 5px 0 0;
-    border-bottom: 3px solid #dda288;
-    padding: 10px 5px;
-    font-size: 25px; }
-    .container .input .toggle {
-      grid-column: 1/2;
-      padding: 10px; }
-    .container .input .add {
-      grid-column: 3/4;
-      font-size: 25px; }
-  .container .items {
-    background: #7e675e;
-    grid-column: 1/4;
-    min-height: 50px;
-    font-size: 25px; }
-  .container .footer {
-    text-align: center;
-    border-top: 3px solid #dda288;
-    background: #5a4e4d;
-    grid-column: 1/4;
-    border-radius: 0 0 5px 5px;
-    display: grid;
-    grid-template-columns: 200px 1fr 200px; }
-    .container .footer p {
-      grid-column: 1/2;
-      padding: 5px;
-      margin-right: 10px; }
-    .container .footer .viewItems {
-      grid-column: 2/3; }
-    .container .footer .btn {
-      grid-column: 3/4;
-      padding: 5px;
-      margin-left: 10px; }
+  box-shadow: 0px 0px 100px 6px #5a4e4d;
+}
+
+.container .input {
+  grid-column: 1/4;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  background: #5a4e4d;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 3px solid #dda288;
+  padding: 10px 5px;
+  font-size: 25px;
+}
+
+.container .input .toggle {
+  grid-column: 1/2;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.container .input .add {
+  grid-column: 3/4;
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.container .items {
+  background: #7e675e;
+  grid-column: 1/4;
+  min-height: 50px;
+  font-size: 25px;
+}
+
+.container .footer {
+  text-align: center;
+  border-top: 3px solid #dda288;
+  background: #5a4e4d;
+  grid-column: 1/4;
+  border-radius: 0 0 5px 5px;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+}
+
+.container .footer p {
+  grid-column: 1/2;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.container .footer .viewItems {
+  grid-column: 2/3;
+}
+
+.container .footer .btn {
+  grid-column: 3/4;
+  padding: 5px;
+  margin-left: 10px;
+}
 
 li {
   display: grid;
-  grid-template-columns: 60px 1fr 60px; }
-  li .completeButton {
-    grid-column: 1/2; }
-  li .deleteButton {
-    grid-column: 3/4; }
+  grid-template-columns: 60px 1fr 60px;
+  transition: all 0.2s;
+}
+
+li .completeButton {
+  grid-column: 1/2;
+}
+
+li .deleteButton {
+  grid-column: 3/4;
+}
 
 .btn {
   color: #fff;
@@ -105,6 +129,16 @@ li {
 
 .completeButton, .deleteButton {
   border: 1px solid #7e675e; }
+
+.removal-of-todo {
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.added-todo {
+  opacity: 0;
+
+}
 
 footer {
   margin-top: 50px;
@@ -128,4 +162,12 @@ footer {
 .author {
   color: #5a4e4d; }
 
+.completeButton {
+  margin-right: 5px;
+}
+
+.deleteButton {
+  margin-left: 5px;
+}
+/* added complete/add/toggle/delete button margins */
 /*# sourceMappingURL=style.css.map */

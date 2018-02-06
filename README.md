@@ -13,9 +13,8 @@ Planned functionality:
 3. create buttons for views
 4. Add prefixes
 5. Cross off li elements when done
-6. deadlines?
-7. clear local storage button
-8. Ajax
-9. tooltip
+6. clear local storage button
+7. ~~tooltip~~
+8. ~~animated todos~~
 
 ---
