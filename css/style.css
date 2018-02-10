@@ -72,7 +72,7 @@ ul {
 .container .items {
   background: #7e675e;
   grid-column: 1/4;
-  min-height: 50px;
+  min-height: 67px;
   font-size: 25px;
 }
 
@@ -168,6 +168,11 @@ footer {
 
 .deleteButton {
   margin-left: 5px;
+}
+
+.done {
+  background: rgba(0,0,0,0.3);
+  text-decoration: line-through;
 }
 /* added complete/add/toggle/delete button margins */
 /*# sourceMappingURL=style.css.map */

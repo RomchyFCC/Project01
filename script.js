@@ -23,10 +23,14 @@ let todoList = {
 	removeAll: function() {
 		this.todos.splice(0, this.todos.length);
 		view.displayTodos();
+		localStorage.clear();
 	},
 	// complete the todo of the selcted position
 	completeTodo: function(position) {
 		this.todos[position].complete = !this.todos[position].complete;
+		/*if (this.todos[position].complete === true) {
+			handlers.crossOff(position);
+		}*/
 		view.displayTodos();
 	},
 	// toggle all todos with complete or incomplete
@@ -82,7 +86,12 @@ let handlers = {
 		todosLi.insertBefore(view.createInput(text), todosLi.childNodes[1]);
 		todosLi.childNodes[2].textContent = "";
 		todosLi.childNodes[1].focus();
-	}
+	}/*,
+	crossOff: function(position) {
+		const li = document.querySelector("[id='" + position + "']");
+		li.classList.add("done");
+		console.log(li.classList);
+	}*/
 };
 
 let view = {
