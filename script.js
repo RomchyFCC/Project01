@@ -231,6 +231,13 @@ let view = {
 	}
 };
 
+// check current year and if it's above 2019, add copyright for that year
+const currentYear = new Date().getFullYear();
+
+if (currentYear > 2018) {
+	document.getElementById('currentYear').innerHTML = ' - ' + currentYear;
+}
+
 // run event listeners
 view.setUpEventListeners();
 todoList.checkStorage();
