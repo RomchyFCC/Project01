@@ -28,9 +28,6 @@ let todoList = {
 	// complete the todo of the selcted position
 	completeTodo: function(position) {
 		this.todos[position].complete = !this.todos[position].complete;
-		/*if (this.todos[position].complete === true) {
-			handlers.crossOff(position);
-		}*/
 		view.displayTodos();
 	},
 	// toggle all todos with complete or incomplete
@@ -86,12 +83,7 @@ let handlers = {
 		todosLi.insertBefore(view.createInput(text), todosLi.childNodes[1]);
 		todosLi.childNodes[2].textContent = "";
 		todosLi.childNodes[1].focus();
-	}/*,
-	crossOff: function(position) {
-		const li = document.querySelector("[id='" + position + "']");
-		li.classList.add("done");
-		console.log(li.classList);
-	}*/
+	}
 };
 
 let view = {
@@ -124,18 +116,19 @@ let view = {
 		// check each li element and assign it the current completion depending if it's complete or not
 		todoList.todos.forEach(function(todo, position) {
 			let todoLi = document.createElement("li");
-			let todoTextCompletion = "";
-			todoTextCompletion = todo.todoText;
+			let span = document.createElement('span');
+			span.textContent = todo.todoText;
 
 			// give the li element the id of the current position put in it the text content and append the buttons
 			// append the li itself to the ul
 			todoLi.id = position;
-			todoLi.textContent = todoTextCompletion;
+			todoLi.appendChild(span);
 			todoLi.appendChild(this.createDeleteButton());
 			todoLi.insertBefore(this.createCompleteButton(), todoLi.childNodes[0]);
 
 			if (todo.complete === true) {
 				todoLi.childNodes[0].className = "btn completeButton fa fa-check-square-o";
+				todoLi.childNodes[1].classList.add('done');
 			}
 
 			todosUl.appendChild(todoLi);

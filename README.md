@@ -14,7 +14,7 @@ Planned functionality:
 1. ~~store session locally~~
 3. create buttons for views
 4. Add prefixes
-5. Cross off li elements when done --> this will take extra work because i need to implement a span in the li elements which means i need to rework a lot of things for it to properly work
+5. ~~Cross off li elements when done --> this will take extra work because i need to implement a span in the li elements which means i need to rework a lot of things for it to properly work~~
 6. ~~clear local storage button~~
 7. ~~tooltip~~
 8. ~~animated todos~~

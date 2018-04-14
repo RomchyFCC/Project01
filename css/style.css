@@ -10,7 +10,8 @@ body {
   margin: 0 auto;
   padding: 0;
   max-width: 900px;
-  color: #fff; }
+  color: #fff; 
+}
 
 li {
   list-style: none;
@@ -171,7 +172,7 @@ footer {
 }
 
 .done {
-  background: rgba(0,0,0,0.3);
+  color: rgb(190, 190, 190);
   text-decoration: line-through;
 }
 /* added complete/add/toggle/delete button margins */
